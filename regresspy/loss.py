@@ -1,6 +1,9 @@
 import numpy as np
 from numpy import ndarray
-""" First of all create two variable and initial the value of those variable and finally run the each function """
+
+""" First of all create two variable and initial the the array value of those variable """
+"""Then finally run the each function """
+
 
 def _error(actual: np.ndarray, predicted: np.ndarray):
     """ Error function """
