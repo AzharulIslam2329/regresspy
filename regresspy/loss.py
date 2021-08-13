@@ -1,6 +1,6 @@
 import numpy as np
 from numpy import ndarray
-
+""" First of all create two variable and initial the value of those variable and finally run the each function """
 
 def _error(actual: np.ndarray, predicted: np.ndarray):
     """ Error function """
@@ -25,5 +25,5 @@ def mse(pred: ndarray, label: ndarray) -> ndarray:
 
 def rmse(pred: ndarray, label: ndarray) -> ndarray:
 
-    """ rmse Error """
+    """ rmse error """
     return np.sqrt(mse(label, pred))
