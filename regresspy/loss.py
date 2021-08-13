@@ -2,54 +2,28 @@ import numpy as np
 from numpy import ndarray
 
 
-def mae(pred: ndarray, label: ndarray) -> ndarray:
-    """Returns the mean absolute error between the predicted values and the
-    actual values.
+def _error(actual: np.ndarray, predicted: np.ndarray):
+    """ Error function """
+    return actual - predicted
 
-    Args:
-        pred (ndarray): the array of predicted values.
-        label (ndarray): the array of ground truths.
-    Returns:
-        (ndarray): mean absolute errors.
-    """
-    pass
+
+def mae(pred: ndarray, label: ndarray) -> ndarray:
+
+    """ Mae function """
+    return np.mean(np.abs(_error(label, pred)))
 
 
 def sse(pred: ndarray, label: ndarray) -> ndarray:
-    """Returns the residual sum of squared errors between the predicted 
-    values and the actual values.
-
-    Args:
-        pred (ndarray): the array of predicted values.
-        label (ndarray): the array of ground truths.
-    Returns:
-        (ndarray): residual sum of squared errors.
-    """
-    pass
+    """ sse function """
+    return np.sum((label-pred)**2)
 
 
 def mse(pred: ndarray, label: ndarray) -> ndarray:
-    """Returns the mean squared errors between the predicted 
-    values and the actual values.
-
-    Args:
-        pred (ndarray): the array of predicted values.
-        label (ndarray): the array of ground truths.
-    Returns:
-        (ndarray): mean squared errors.
-    """
-    pass
+    """ mse function """
+    return np.mean(np.square(_error(label, pred)))
 
 
 def rmse(pred: ndarray, label: ndarray) -> ndarray:
-    """Returns the root mean squared error between the predicted values
-    and the actual values.
 
-    Args:
-        pred (ndarray): the array of predicted values.
-        label (ndarray): the array of ground truths.
-    Returns:
-        (ndarray): root mean squared errors.
-    """
-    pass
-
+    """ rmse Error """
+    return np.sqrt(mse(label, pred))
